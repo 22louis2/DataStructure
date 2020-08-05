@@ -23,22 +23,25 @@ namespace DataStructure
 
             LinkedList<string> linkedlist = new LinkedList<string>();
 
-            Console.WriteLine(linkedlist.isEmpty());
-            Console.WriteLine(linkedlist.Size());
-            linkedlist.Add("test1");
-            linkedlist.Add("test2");
-            linkedlist.Insert(1, "test3");
-            Console.WriteLine(linkedlist.Size());
+            /***********************************************************/
+            // RUN ON WINDOWS POWERSHELL OR COMMAND PROMPT
+            /**********************************************************/
 
-            Console.WriteLine(linkedlist.Search(1));
-            linkedlist.Remove("test3");
-            Console.WriteLine(linkedlist.Size());
-            //Console.WriteLine(linkedlist.Index("test3"));
+            //Console.WriteLine(linkedlist.isEmpty());
+            //Console.WriteLine(linkedlist.Size());
+            //linkedlist.Add("test1");
+            //linkedlist.Add("test2");
+            //linkedlist.Insert(1, "test3");
+            //Console.WriteLine(linkedlist.Size());
 
-            //Console.WriteLine(linkedlist.Check("test2"));
-            linkedlist.Clear();
-            Console.WriteLine(linkedlist.Size());
-            
+            //Console.WriteLine(linkedlist.Search("test1"));
+            //linkedlist.Remove("test3");
+            //Console.WriteLine(linkedlist.Size());
+            //linkedlist.Index("test3");
+
+            //linkedlist.Check("test2");
+            //Console.WriteLine(linkedlist.Size());
+
 
             //LinkedList<int> linkedlist = new LinkedList<int>();
             //linkedlist.AddToEnd(9);

@@ -42,6 +42,7 @@ namespace DataStructure
             prevNode.Next = node;
             node.Next = current;
             this.Count++;
+            Console.WriteLine($"Item {node.Data} has been inserted");
         }
 
         public void Add(T data)
@@ -61,6 +62,7 @@ namespace DataStructure
                 current = node;
             }
             this.Count++;
+            Console.WriteLine($"The Item {data} has been added");
         }
 
         public void Remove(T value)
@@ -76,29 +78,32 @@ namespace DataStructure
             this.Count--;
         }
 
-        public void Clear()
-        {
-            this.head = null;
-            this.Count = 0;
-        }
+        //public void Clear()
+        //{
+        //    this.head = null;
+        //    this.Count = 0;
+        //}
 
         public int Index(T data)
         {
-            Node<T> current = this.head;
-            int position = 0;
             try
             {
+                Node<T> current = this.head;
+                int position = 0;
+            
                 while(!current.Data.Equals(data))
                 {
                     position++;
                     current = current.Next;
                 }
+                Console.WriteLine($"The Item is at position: {position}");
                 return position;
             } catch (NullReferenceException)
             {
+                Console.WriteLine("Item not found");
                 return -1;
             }
-            
+
         }
 
         public bool Check(T data)
@@ -106,7 +111,7 @@ namespace DataStructure
             return this.Index(data) >= 0;
         }
 
-        public int Search(int value)
+        public string Search(T value)
         {
             var current = this.head;
 
@@ -114,7 +119,7 @@ namespace DataStructure
             {
                 if (current.Data.Equals(value))
                 {
-                    return i;
+                    return $"Found: {current.Data}";
                 }
                 else
                 {
@@ -123,7 +128,7 @@ namespace DataStructure
 
             }
 
-            return -1;
+            return "Item Not found";
         }
 
     }
