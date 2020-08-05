@@ -6,49 +6,124 @@ namespace DataStructure
 {
     class LinkedList<T>
     {
-        public Node<T> headNode;
+        public Node<T> head = null;
+        public int Count { get; set; }
+        public object Data { get; set; }
+
         public LinkedList()
         {
-            headNode = null;
+            this.head = null;
+            this.Count = 0;
         }
 
-        public void AddToEnd(T data)
+        public bool isEmpty()
         {
-            if (headNode == null) headNode = new Node<T>(data);
-            else headNode.AddToEnd(data);
+            return this.Count == 0; 
         }
 
-        public void AddToBeginning(T data)
+        public int Size()
         {
-            if (headNode == null) headNode = new Node<T>(data);
+            return this.Count; 
+        }
+        
+        public void Insert(int index, T data)
+        {
+            var current = this.head;
+            int position = 0;
+            var prevNode = new Node<T>(data);
+            var node = new Node<T>(data);
+
+            while ( position < index)
+            {
+                position++;
+                prevNode = current;
+                current = current.Next;
+            }
+            prevNode.Next = node;
+            node.Next = current;
+            this.Count++;
+        }
+
+        public void Add(T data)
+        {
+            var node = new Node<T>(data);
+            var current = this.head;
+            if (this.head == null)
+            {
+                this.head = new Node<T>(data);
+            }
             else
             {
-                Node<T> temp = new Node<T>(data);
-                temp.next = headNode;
-                headNode = temp;
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                }
+                current = node;
             }
+            this.Count++;
         }
 
-        public void RemoveFromBeginning()
+        public void Remove(T value)
         {
-            if (headNode == null) return;
-            else
+            var current = this.head;
+            var prevNode = new Node<T>(value);
+            while (!current.Data.Equals(value))
             {
-                headNode = headNode.next;
+                prevNode = current;
+                current = current.Next;
             }
+            prevNode.Next = current.Next;
+            this.Count--;
         }
 
-        public void RemoveFromEnd()
+        public void Clear()
         {
-
+            this.head = null;
+            this.Count = 0;
         }
 
-        public void Print()
+        public int Index(T data)
         {
-            if (headNode != null)
+            Node<T> current = this.head;
+            int position = 0;
+            try
             {
-                headNode.Print();
+                while(!current.Data.Equals(data))
+                {
+                    position++;
+                    current = current.Next;
+                }
+                return position;
+            } catch (NullReferenceException)
+            {
+                return -1;
             }
+            
+        }
+
+        public bool Check(T data)
+        {
+            return this.Index(data) >= 0;
+        }
+
+        public int Search(int value)
+        {
+            var current = this.head;
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (current.Data.Equals(value))
+                {
+                    return i;
+                }
+                else
+                {
+                    current = current.Next;
+                }
+
+            }
+
+            return -1;
         }
 
     }

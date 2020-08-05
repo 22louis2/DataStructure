@@ -16,29 +16,43 @@ namespace DataStructure
                 int max = Convert.ToInt32(Console.ReadLine());
                 int[] arr = new int[max];
             }
-           
+
             Stack<int> stack = new Stack<int>();
 
             Queue<int> queue = new Queue<int>();
 
+            LinkedList<string> linkedlist = new LinkedList<string>();
 
-            LinkedList<int> linkedlist = new LinkedList<int>();
-            linkedlist.AddToEnd(9);
-            linkedlist.AddToEnd(4);
-            linkedlist.AddToEnd(10);
-            linkedlist.AddToBeginning(5);
-            linkedlist.AddToBeginning(6);
-            linkedlist.AddToBeginning(100);
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.RemoveFromBeginning();
-            linkedlist.AddToBeginning(100);
-            linkedlist.Print();
+            Console.WriteLine(linkedlist.isEmpty());
+            Console.WriteLine(linkedlist.Size());
+            linkedlist.Add("test1");
+            linkedlist.Add("test2");
+            linkedlist.Insert(1, "test3");
+            Console.WriteLine(linkedlist.Size());
+
+            Console.WriteLine(linkedlist.Search(1));
+            linkedlist.Remove("test3");
+            Console.WriteLine(linkedlist.Size());
+            //Console.WriteLine(linkedlist.Index("test3"));
+
+            //Console.WriteLine(linkedlist.Check("test2"));
+            linkedlist.Clear();
+            Console.WriteLine(linkedlist.Size());
+            
+
+            //LinkedList<int> linkedlist = new LinkedList<int>();
+            //linkedlist.AddToEnd(9);
+            //linkedlist.AddToEnd(4);
+            //linkedlist.AddToEnd(10);
+            //linkedlist.AddToBeginning(5);
+            //linkedlist.AddToBeginning(6);
+            //linkedlist.AddToBeginning(100);
+            //linkedlist.RemoveFromEnd();
+            //linkedlist.RemoveFromEnd();
+            //linkedlist.RemoveFromEnd();
+            //linkedlist.AddToBeginning(100);
+            //linkedlist.Print();
+            //linkedlist.Size();
 
             //Console.WriteLine(stack.isEmpty());
             //stack.Push(arr, max, 10);

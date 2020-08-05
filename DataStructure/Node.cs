@@ -6,28 +6,13 @@ namespace DataStructure
 {
     class Node<T>
     {
-        public T data;
-        public Node<T> next;
-
-        public Node(T i)
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
+        public Node(T data)
         {
-            data = i;
-            next = null;
+            this.Data = data;
+           
         }
 
-        public void Print()
-        {
-            Console.Write($"|{data}|->");
-            if (next != null)
-            {
-                next.Print();
-            }
-        }
-
-        public void AddToEnd(T data)
-        {
-            if (next == null) next = new Node<T>(data);
-            else next.AddToEnd(data);
-        }
     }
 }
