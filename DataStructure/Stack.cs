@@ -11,17 +11,21 @@ namespace DataStructure
         public int Top { get; set; }
         public T Value { get; set; }
 
+        // Constructor of the stack class
         public Stack()
         {
             this.Top = -1;
         }
 
+        // Checking if the Stack is empty or not
         public bool isEmpty()
         {
             Console.Write("  ");
             if (Top < 0) return true;
             return false;
         }
+
+        // To add an element onto the Stack, from the end
         public string Push(T[] data, int max, T value)
         {
             this.Data = data;
@@ -38,6 +42,7 @@ namespace DataStructure
             }
         }
 
+        // Removing an item or element from the end of the Stack
         public void Pop(T[] data)
         {
             this.Data = data;
@@ -52,6 +57,7 @@ namespace DataStructure
             }
         }
 
+        // To print out the element at the top of the stack
         public void Peek(T[] data)
         {
             this.Data = data;
@@ -62,6 +68,7 @@ namespace DataStructure
             else Console.WriteLine($"  This is the Item at the top of the Stack: {Data[Top]}\n");
         }
 
+        // To print out all the item(s) stored on the Stack
         public void Print(T[] data)
         {
             this.Data = data;
@@ -81,6 +88,7 @@ namespace DataStructure
             }
         }
 
+        // Getting how many element(s) or item(s) on the Stack
         public void Size()
         {
 

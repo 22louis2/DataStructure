@@ -10,22 +10,30 @@ namespace DataStructure
         public int Count { get; set; }
         public object Data { get; set; }
 
+        // Constructor of the LinkedList class
         public LinkedList()
         {
             this.head = null;
             this.Count = 0;
         }
 
+        // To check if the LinkedList is empty or not
         public bool isEmpty()
         {
             return this.Count == 0; 
         }
 
+        // Getting the size or length of the LinkedList element
         public int Size()
         {
             return this.Count; 
         }
         
+        /* To input the users data at any position on the LinkedList
+         * Also checking if the position exist already
+         * If the index input is above the size of the LinkedList
+         * then storing it at the last index
+        */
         public void Insert(int index, T data)
         {
             var current = this.head;
@@ -45,6 +53,8 @@ namespace DataStructure
             Console.WriteLine($"Item {node.Data} has been inserted");
         }
 
+        /* Storing the data with reference to the next node on the LinkedList
+           if it is null */
         public void Add(T data)
         {
             var node = new Node<T>(data);
@@ -65,6 +75,8 @@ namespace DataStructure
             Console.WriteLine($"The Item {data} has been added");
         }
 
+        /* Remove the data stored on the LinkedList 
+           and reference the next to the  next Node on the LinkedList*/
         public void Remove(T value)
         {
             var current = this.head;
@@ -83,7 +95,8 @@ namespace DataStructure
         //    this.head = null;
         //    this.Count = 0;
         //}
-
+        
+        // Check if the data exist and return its position on the LinkedList
         public int Index(T data)
         {
             try
@@ -106,11 +119,13 @@ namespace DataStructure
 
         }
 
+        // Verify if the value passed through the paramters exist or not
         public bool Check(T data)
         {
             return this.Index(data) >= 0;
         }
 
+        // Search is a data exist and return the data back to the user
         public string Search(T value)
         {
             var current = this.head;

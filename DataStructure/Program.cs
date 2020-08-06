@@ -9,6 +9,8 @@ namespace DataStructure
         static void Main(string[] args)
         {
             Console.WriteLine("What do you want to perform");
+
+            // Getting the user to input the size the array they need in order to use the Stack and Queue Generic class
             Console.WriteLine("1. Stack \t\t 2. Queue \t\t 3. LinkedList\t\t\n");
             int reply = Convert.ToInt32(Console.ReadLine());
             if(reply == 1 || reply == 2) {
@@ -41,21 +43,6 @@ namespace DataStructure
 
             //linkedlist.Check("test2");
             //Console.WriteLine(linkedlist.Size());
-
-
-            //LinkedList<int> linkedlist = new LinkedList<int>();
-            //linkedlist.AddToEnd(9);
-            //linkedlist.AddToEnd(4);
-            //linkedlist.AddToEnd(10);
-            //linkedlist.AddToBeginning(5);
-            //linkedlist.AddToBeginning(6);
-            //linkedlist.AddToBeginning(100);
-            //linkedlist.RemoveFromEnd();
-            //linkedlist.RemoveFromEnd();
-            //linkedlist.RemoveFromEnd();
-            //linkedlist.AddToBeginning(100);
-            //linkedlist.Print();
-            //linkedlist.Size();
 
             //Console.WriteLine(stack.isEmpty());
             //stack.Push(arr, max, 10);

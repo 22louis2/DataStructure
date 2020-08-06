@@ -6,16 +6,19 @@ namespace DataStructure
 {
     class Queue<T>
     {
+        // Data or properties needed to be accessed by this class
         public int Max { get; set; }
         public T[] Data { get; set; }
         public int Top { get; set; }
         public T Value { get; set; }
 
+        // Queue constructor
         public Queue()
         {
             this.Top = -1;
         }
 
+        // To check if the Queue is empty or not
         public bool isEmpty()
         {
             Console.Write("  ");
@@ -23,6 +26,7 @@ namespace DataStructure
             return false;
         }
 
+        // Enables the adding of an item into the queue
         public string Enqueue(T[] data, int max, T value)
         {
             this.Data = data;
@@ -39,6 +43,7 @@ namespace DataStructure
             }
         }
 
+        // Used to remove the first element on the Queue
         public void Dequeue(T[] data)
         {
             this.Data = data;
@@ -59,7 +64,7 @@ namespace DataStructure
                 return;
             }
         }
-
+        // To print out all the data stored on the Queue
         public void Print(T[] data)
         {
             this.Data = data;
@@ -78,7 +83,7 @@ namespace DataStructure
                 }
             }
         }
-
+        // This is to keep track of size of the Queue as it changes
         public void Size()
         {
             int result = 0;
